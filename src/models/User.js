@@ -19,6 +19,17 @@ const UserModel = {
     }
   },
 
+  async findById(id) {
+    try {
+      // Kita tidak mengambil kolom password demi keamanan
+      const [rows] = await pool.query('SELECT id, email, created_at FROM users WHERE id = ?', [id]);
+      return rows[0] || null;
+    } catch (error) {
+      console.error('Error saat mencari user by id:', error);
+      throw error;
+    }
+  },
+
   /**
    * Membuat user baru.
    * @param {object} userData - Data user yang akan dibuat.

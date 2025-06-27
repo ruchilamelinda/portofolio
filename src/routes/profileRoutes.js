@@ -6,8 +6,8 @@ import { protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// Terapkan middleware 'protect' pada rute-rute ini
-// 'protect' akan dijalankan SEBELUM 'getProfile' atau 'updateProfile'
+// Terapkan middleware 'protect' pada kedua rute ini.
+// Hanya user yang sudah login (mengirim token valid) yang bisa mengaksesnya.
 router.get('/', protect, getProfile);
 router.put('/', protect, updateProfile);
 

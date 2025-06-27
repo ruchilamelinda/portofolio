@@ -2,15 +2,11 @@
 
 import express from 'express';
 import authRoutes from './authRoutes.js';
-import profileRoutes from './profileRoutes.js';
+import profileRoutes from './profileRoutes.js'; // <-- IMPORT RUTE PROFIL
 
 const router = express.Router();
 
-// Arahkan semua request di /auth ke authRoutes
 router.use('/auth', authRoutes);
-router.use('/profile', profileRoutes);
+router.use('/profile', profileRoutes); // <-- DAFTARKAN RUTE PROFIL
 
-// Nanti kita akan tambahkan rute lain di sini
-// router.use('/profile', profileRoutes); 
-
-export default router; // <-- BARIS INI YANG MEMPERBAIKI ERROR
+export default router;
