@@ -11,7 +11,7 @@ function LoginPage() {
   const [error, setError] = useState('');
   
   const { login } = useContext(AuthContext);
-  const navigate = useNavigate(); // <-- Inisialisasi hook navigasi
+  const navigate = useNavigate('/admin/dashboard'); // <-- Inisialisasi hook navigasi
 
   const handleSubmit = async (e) => {
     e.preventDefault();
